@@ -3,7 +3,7 @@ import './App.css';
 import InputComp from './InputComp/InputComp';
 import ValidationComp from './ValidationComp/ValidationComp';
 import CharComp from './CharComp/CharComp';
-import './CharComp.css';
+
 
 class App extends Component {
   state = {
@@ -38,8 +38,8 @@ class App extends Component {
         inputChanged = {this.inputChangedHandler}
         str={this.state.inputString}/>
       <ValidationComp 
-        inputText={this.state.inputString}/>
-      <div className="CharComp">
+        inputTextLength={this.state.inputString.length}/>
+      <div >
         {locArr2.map((el, index) => {
           return <CharComp myClicked={() => this.myClickedHandler(index)} char={el.el} key={el.id}/>})}
       </div>
